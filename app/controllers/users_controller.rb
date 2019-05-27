@@ -11,6 +11,7 @@ class UsersController < ApplicationController
             payload = { user_id: user.id }
             token = issue_token(payload)
             render json: { jwt: token }
+            UserMailer.welcome_email(user).deliver!         
         else
             render json: { error: 'Signup not succesfull!'}
         end
