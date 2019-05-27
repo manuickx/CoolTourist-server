@@ -8,10 +8,9 @@
 
 require 'faker'
 
-# UserActivity.delete_all
+# Booking.delte_all
 # ActivityCategory.delete_all
 # Activity.delete_all
-# Provider.delete_all
 # Category.delete_all
 # User.delete_all
 
@@ -46,10 +45,11 @@ Category.create(name: "Off Road")
 Category.create(name: "ATVs")
 Category.create(name: "Snowmobiles")
 
-Activity.create!(name:"Brasov Trail Adventure", user_id: 1, imageurl: "https://c8.alamy.com/comp/HRY103/romania-brasov-county-transylvania-may-05-2016-remus-cucu-athlete-HRY103.jpg", description: Faker::Lorem.paragraphs(10, true), price: rand(200))
+Activity.create!(name: "Brasov Trail Adventure", user_id: 1, imageurl: "https://c8.alamy.com/comp/HRY103/romania-brasov-county-transylvania-may-05-2016-remus-cucu-athlete-HRY103.jpg", description: Faker::Lorem.paragraphs(10, true), price: rand(200))
 
 ActivityCategory.create!(activity_id: 1, category_id: 1)
 ActivityCategory.create!(activity_id: 1, category_id: 2)
 ActivityCategory.create!(activity_id: 1, category_id: 3)
 ActivityCategory.create!(activity_id: 1, category_id: 5)
 
+Booking.create(activity_id: 1, name: "Gigi Kent", email: "gigi@gigi.com", phone: "+44-0665-213214", comment: "Please confirm booking asap", date: "2019-07-12 12:30:00")
