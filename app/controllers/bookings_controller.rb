@@ -14,4 +14,10 @@ class BookingsController < ApplicationController
         end
     end
 
+    def destroy
+        booking = Booking.find(params[:id])
+        booking.destroy
+        render json: {message: 'deleted'}
+    end
+
 end

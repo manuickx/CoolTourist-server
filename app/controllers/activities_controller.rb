@@ -6,7 +6,7 @@ class ActivitiesController < ApplicationController
     end
 
     def show
-        activity = Activity.find_by(id: params[:id])
+        activity = Activity.find(params[:id])
         render json: activity
     end
 
@@ -21,13 +21,13 @@ class ActivitiesController < ApplicationController
     end
 
     def update
-        activity = Activity.find_by(id: params[:id])
-        activity.update(name: params[:name])
+        activity = Activity.find(params[:id])
+        activity.update(name: params[:name], description: params[:description], imageurl: params[:imageurl], price: params[:price])
         render json: activity
     end
 
     def destroy
-        activity = Activity.find_by(id: params[:id])
+        activity = Activity.find(params[:id])
         activity.categories.delete_all
         activity.destroy
         render json: {message: 'deleted'}

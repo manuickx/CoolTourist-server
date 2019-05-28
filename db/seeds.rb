@@ -14,11 +14,11 @@ require 'faker'
 # Category.delete_all
 # User.delete_all
 
-User.create(name: "Manu", email: "manu@x.x", password: "x")
+# User.create(name: "Manu", email: "manu@x.x", password: "x")
 
-10.times do
-   User.create(name: Faker::Name.first_name, email: Faker::Internet.safe_email, password: Faker::Internet.password) 
-end
+# 10.times do
+#    User.create(name: Faker::Name.first_name, email: Faker::Internet.safe_email, password: Faker::Internet.password) 
+# end
 
 Category.create(name: "Trekking")
 Category.create(name: "Mountain Biking")
@@ -45,11 +45,21 @@ Category.create(name: "Off Road")
 Category.create(name: "ATVs")
 Category.create(name: "Snowmobiles")
 
-Activity.create!(name: "Brasov Trail Adventure", user_id: 1, imageurl: "https://c8.alamy.com/comp/HRY103/romania-brasov-county-transylvania-may-05-2016-remus-cucu-athlete-HRY103.jpg", description: Faker::Lorem.paragraphs(10, true), price: rand(200))
+# Activity.create!(name: "Brasov Trail Adventure", user_id: 1, imageurl: "https://c8.alamy.com/comp/HRY103/romania-brasov-county-transylvania-may-05-2016-remus-cucu-athlete-HRY103.jpg", description: Faker::Lorem.paragraphs(10, true), price: rand(200))
 
-ActivityCategory.create!(activity_id: 1, category_id: 1)
-ActivityCategory.create!(activity_id: 1, category_id: 2)
-ActivityCategory.create!(activity_id: 1, category_id: 3)
-ActivityCategory.create!(activity_id: 1, category_id: 5)
+# ActivityCategory.create!(activity_id: 1, category_id: 1)
+# ActivityCategory.create!(activity_id: 1, category_id: 2)
+# ActivityCategory.create!(activity_id: 1, category_id: 3)
+# ActivityCategory.create!(activity_id: 1, category_id: 5)
 
-Booking.create(activity_id: 1, name: "Gigi Kent", email: "gigi@gigi.com", phone: "+44-0665-213214", comment: "Please confirm booking asap", date: "2019-07-12 12:30:00")
+# Booking.create(activity_id: 1, name: "Gigi Kent", email: "gigi@gigi.com", phone: "+44-0665-213214", comment: "Please confirm booking asap", date: "2019-07-12 12:30:00")
+
+
+User.create(name: "Manu", email: "manu@email.com", avatar: "https://banner2.kisspng.com/20180723/guc/kisspng-ruroc-shop-ski-snowboard-helmets-snowboarding-5b5623b5bcf5f9.197831381532371893774.jpg", password: "password", verified: true)
+
+10.times do
+   Activity.create(user_id: 1, name: Faker::Company.name, description: Faker::Lorem.paragraph(7, false, 6))
+end
+
+
+
