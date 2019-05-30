@@ -1,5 +1,4 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :id, :name, :categories, :imageurl, :description, :price
+  attributes :id, :name, :imageurl, :description, :price, :categories, :bookings
   has_one :user
-  has_many :bookings
 end
