@@ -19,8 +19,8 @@ class UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        user.update(name: params[:name], email: params[:email], password: params[:password])
-        if user.updated
+        user.update(name: params[:name], email: params[:email])
+        if user.update(name: params[:name], email: params[:email])
             render json: user
         else
             render json: { error: 'User was not updated'}
